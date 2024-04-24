@@ -1,0 +1,10 @@
+data("iris")
+summary(iris)
+pdf("iris.pdf")
+par(mfrow=c(2,2))
+hist(iris$Sepal.Length, main="Histograma Sepal Length",xlab="Lenght", col='blue')
+boxplot(iris$Sepal.Length,main="Boxplot Sepal Length")
+pie(table(iris$Species),main="Diagrama de sectors Sepal Length")
+barplot(table(iris$Species),main="Diagrama de barres Sepal Length", col=2:4)
+dev.off()
+

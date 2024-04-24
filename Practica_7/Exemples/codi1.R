@@ -1,0 +1,15 @@
+attach(mtcars)
+by(mpg,cyl,mean)
+by(mpg,cyl,mean,na.rm=T)
+by(mpg,cyl,mean,na.rm=T,trim=0.05)
+by(mpg,cyl,median)
+by(mpg,cyl,quantile)
+by(mpg,cyl,summary)
+by(mpg,cyl,function(x) list(mean=mean(x),sd=sd(x),median=median(x)))
+
+library(psych)
+describeBy(mpg,cyl)
+
+summary(subset(mtcars,cyl==4,select=c("mpg","disp","hp","drat","wt","qsec")))
+summary(subset(mtcars,cyl==6,select=c(1,3,4,5,6,7)))
+summary(subset(mtcars,cyl==8,select=c(1,3,4,5,6,7)))
